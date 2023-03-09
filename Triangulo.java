@@ -156,10 +156,11 @@ public void Rotacao_fixa(int x0,int xf, int y0,int yf,Triangulo t,double angulo)
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);	
 		int opcao;
-		System.out.println("digite a largura da sua tela");
-		int larg = input.nextInt();
-		System.out.println("digite a altura da sua tela");
-		int alt =  input.nextInt();
+		
+		//abrir janela
+		
+		int larg = 500;
+		int alt =  500;
 		
 		/*inicializa um objeto Desenhar*/
 		Triangulo t = new Triangulo(alt,larg);
@@ -170,20 +171,21 @@ public void Rotacao_fixa(int x0,int xf, int y0,int yf,Triangulo t,double angulo)
 			
 			System.out.printf("[0] Desenha triangulo \n"+
 			"[1] Escala \n"+"[2] Rotação \n"+"[3] Translatação \n"+
-					"[4] Espelhamento \n"+"[5] Escala_fixa \n"+"[6]Rotação_fixa \n"+"[7] Sair \n");
+			"[4] Espelhamento \n"+"[5] Escala_fixa \n"+
+			"[6]Rotação_fixa \n"+"[7] Sair \n");
 			
 			opcao=input.nextInt();
 			
 			if(opcao==0) {
-		System.out.println("desenhar triangulo");
+		//desenhar triangulo
 		t.equacao_diferecial(40, 70, 50, 50,t);
 		t.equacao_diferecial(40, 55, 50, 90,t);
 		t.equacao_diferecial(70, 55, 50, 90,t);}
 			
 			if(opcao==1) {
 				int ce;
-				System.out.println("digite o valor do Coeficiente escalar");
-				 ce=input.nextInt();
+				System.out.println("digite o valor do Coeficiente escalar \n");
+				 ce=input.nextInt(); 
 				 t.Escala(40, 70, 50, 50, t, ce);
 				 t.Escala(40, 55, 50, 90, t, ce);
 				 t.Escala(70, 55, 50, 90, t, ce);
@@ -191,7 +193,7 @@ public void Rotacao_fixa(int x0,int xf, int y0,int yf,Triangulo t,double angulo)
 			
 			if(opcao==2) {
 				double angulo;
-				System.out.println("digite o valor do angulo");
+				System.out.println("digite o valor do angulo \n");
 				angulo=input.nextDouble();
 				t.Rotacao(40, 70, 50, 50, t, angulo);
 				 t.Rotacao(40, 55, 50, 90, t, angulo);
@@ -200,9 +202,9 @@ public void Rotacao_fixa(int x0,int xf, int y0,int yf,Triangulo t,double angulo)
 			
 			if(opcao==3) {
 				int tx,ty;
-				System.out.println("digite o valor do Coeficiente de translatação de x");
+				System.out.println("digite o valor do Coeficiente de translatação de x \n");
 				tx=input.nextInt();
-				System.out.println("digite o valor do Coeficiente de translatação de y");
+				System.out.println("digite o valor do Coeficiente de translatação de y \n");
 				ty=input.nextInt();
 				
 				t.Translatacao(40, 70, 50, 50, t, tx,ty);
@@ -211,7 +213,7 @@ public void Rotacao_fixa(int x0,int xf, int y0,int yf,Triangulo t,double angulo)
 			}
 			
 			if(opcao==4) {
-				System.out.println("desenhar triangulo invertido");
+				System.out.println("desenhar triangulo invertido \n");
 				t.espelhamento(40, 70, 50, 50,t);
 				t.espelhamento(40, 55, 50, 90,t);
 				t.espelhamento(70, 55, 50, 90,t);
@@ -219,7 +221,7 @@ public void Rotacao_fixa(int x0,int xf, int y0,int yf,Triangulo t,double angulo)
 			
 			if(opcao==5){
 				int ce;
-				System.out.println("digite o valor do Coeficiente escalar");
+				System.out.println("digite o valor do Coeficiente escalar \n");
 				 ce=input.nextInt();
 				 t.Escala_fixa(40, 70, 50, 50, t, ce);
 				 t.Escala_fixa(40, 55, 50, 90, t, ce);
@@ -228,7 +230,7 @@ public void Rotacao_fixa(int x0,int xf, int y0,int yf,Triangulo t,double angulo)
 			
 			if(opcao==6) {
 				double angulo;
-				System.out.println("digite o valor do angulo");
+				System.out.println("digite o valor do angulo \n");
 				angulo=input.nextDouble();
 				t.Rotacao_fixa(40, 70, 50, 50, t, angulo);
 				 t.Rotacao_fixa(40, 55, 50, 90, t, angulo);
